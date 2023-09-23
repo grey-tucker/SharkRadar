@@ -15,20 +15,13 @@
 	npm run build:watch
 	```
 4. Go to: http://localhost:3030
-### Setting up from scratch
-1. Install Node.js
-2. Install these Visual Studio Code extensions:
-	- **EditorConfig for VS Code**: Maintains consistent coding styles between different editors and IDEs
-		- Changed Settings:
-			- Indentation: Tab
-			- Indentation Size: 4
-			- End of Line: LF
-			- Trim Trailing Whitespace: true
-3. Create the node project:
+### Setting up the node project
+*(This is only necessary if you want to create a new node project)*
+1. Create the node project:
 	```bash
 	npm init
 	```
-4. Install the following node packages:
+2. Install the following node packages:
 	- **esbuild**: Bundles and minifies the JavaScript code
 	- **React**: JavaScript frontend library
 	- **Material UI**: UI component library
@@ -38,6 +31,18 @@
 	- **ESLint**: Helps find and fix problems in JavaScript code
 	```bash
 	npm init @eslint/config
+	```
+	```bash
 	npm i react react-dom @mui/material @emotion/react @emotion/styled mongodb dotenv express
+	```
+	```bash
 	npm i -D esbuild eslint-plugin-react-hooks
 	```
+### Structure
+- **public**: Static files, compiled code
+- **src**: Source code, uncompiled code
+	- **client**: Client-side code
+		- **components**: React components
+		- **pages**: React pages
+		- **utils**: Utility functions
+- **server**: Server-side code
