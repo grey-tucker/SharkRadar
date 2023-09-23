@@ -1,0 +1,39 @@
+{
+  "name": "sharkradar",
+  "version": "1.0.0",
+  "description": "Shark Radar",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "client": "esbuild src/index.jsx --bundle --target=es6 --outfile=public/scripts.js",
+    "build:watch": "esbuild src/index.jsx --bundle --target=es6 --outfile=public/scripts.js --watch",
+    "server": "node server/index.js",
+    "server:watch": "nodemon server/index.js dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jwesolowski/SharkRadar.git"
+  },
+  "author": "Fiona Lindsay, Blake Drews, Ethan Heuer, Grey Tucker, Jacob Wesolowski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jwesolowski/SharkRadar/issues"
+  },
+  "homepage": "https://github.com/Jwesolowski/SharkRadar#readme",
+  "devDependencies": {
+    "esbuild": "^0.19.3",
+    "eslint": "^8.50.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.10",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongodb": "^6.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
