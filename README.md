@@ -1,7 +1,9 @@
 # SharkRadar
 
 ## Setting up the environment
+
 ### Quick setup
+
 1. Install the node packages:
     ```bash
     npm i
@@ -15,7 +17,9 @@
     npm run build:watch
     ```
 4. Go to: http://localhost:3030
+
 ### Setting up the node project
+
 *(This is only necessary if you want to create a new node project)*
 1. Create the node project:
     ```bash
@@ -38,7 +42,9 @@
     ```bash
     npm i -D esbuild eslint-plugin-react-hooks express dotenv
     ```
+
 ### Structure
+
 - **public**: Static files, compiled code
 - **src**: Source code, uncompiled code
     - **client**: Client-side code
