@@ -1,4 +1,4 @@
-import express from 'express';
+import express from "express";
 
 const port = 3030;
 
@@ -9,7 +9,7 @@ app.use((req, res, next) => {
 	next();
 });
 
-app.use(express.static('./public'));
+app.use(express.static("./public"));
 
 app.listen(port, () => {
 	console.log(`Server started on port ${port}`);
