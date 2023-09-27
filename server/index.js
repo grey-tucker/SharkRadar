@@ -10,6 +10,9 @@ app.use((req, res, next) => {
 });
 
 app.use(express.static("./public"));
+app.use("/about", express.static("./public"));
+app.use("/adopt", express.static("./public"));
+app.use("/facts", express.static("./public"));
 
 app.listen(port, () => {
 	console.log(`Server started on port ${port}`);

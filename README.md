@@ -33,10 +33,10 @@
     npm init @eslint/config
     ```
     ```bash
-    npm i react react-dom @mui/material @emotion/react @emotion/styled mongodb
+    npm i @mui/icons-material @mui/material @emotion/styled @emotion/react mongodb
     ```
     ```bash
-    npm i -D esbuild eslint-plugin-react-hooks express dotenv
+    npm i -D esbuild eslint-plugin-react-hooks express dotenv react react-dom react-router-dom
     ```
     **Purpose of packages:**
     - **esbuild**: Bundles and minifies the JavaScript code
