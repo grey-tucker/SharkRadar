@@ -4,21 +4,22 @@
 
 ### Quick setup
 
-1. Install the node packages:
+1. Clone the repository
+2. Install the node packages:
     ```bash
     npm i
     ```
-2. Run the build:
+3. Run the build:
     ```bash
     npm run build
     ```
     *(or `build:watch` to watch for changes)*
-3. Run the server:
+4. Run the server:
     ```bash
     npm run server
     ```
     *(or `server:watch` to watch for changes)*
-4. Go to: http://localhost:3030
+5. Go to: http://localhost:3030
 
 ### Setting up the node project
 
@@ -33,10 +34,10 @@
     npm init @eslint/config
     ```
     ```bash
-    npm i react react-dom @mui/material @emotion/react @emotion/styled mongodb
+    npm i @mui/icons-material @mui/material @emotion/styled @emotion/react mongodb
     ```
     ```bash
-    npm i -D esbuild eslint-plugin-react-hooks express dotenv
+    npm i -D esbuild eslint-plugin-react-hooks express dotenv react react-dom react-router-dom
     ```
     **Purpose of packages:**
     - **esbuild**: Bundles and minifies the JavaScript code
@@ -58,3 +59,4 @@
         - **/utils**: Utility functions
 - **/server**: Server-side code
     - **/routes**: Express routes for API components
+- **/misc**: Whatever you want!
