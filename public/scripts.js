@@ -39038,7 +39038,7 @@ Please use another name.` : formatMuiErrorMessage(18));
   // src/components/Navbar.jsx
   function NavbarTab(props) {
     const { text, target } = props;
-    return /* @__PURE__ */ import_react10.default.createElement(Link, { to: target, style: { textDecoration: "none" } }, /* @__PURE__ */ import_react10.default.createElement(Button_default, null, text));
+    return /* @__PURE__ */ import_react10.default.createElement(Link, { to: target, style: { textDecoration: "none" } }, /* @__PURE__ */ import_react10.default.createElement(Button_default, { disableRipple: true }, text));
   }
   function Navbar(props) {
     const { tabs: tabs2 } = props;
@@ -39049,7 +39049,7 @@ Please use another name.` : formatMuiErrorMessage(18));
     const handleClose = () => {
       setAnchorEl(null);
     };
-    return /* @__PURE__ */ import_react10.default.createElement(AppBar_default, { position: "static" }, /* @__PURE__ */ import_react10.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react10.default.createElement(Stack_default, { direction: "row", sx: { flexGrow: 1 } }, tabs2.map(([tabText, tabTarget]) => /* @__PURE__ */ import_react10.default.createElement(NavbarTab, { key: tabText, text: tabText, target: tabTarget }))), /* @__PURE__ */ import_react10.default.createElement(Stack_default, { direction: "row" }, /* @__PURE__ */ import_react10.default.createElement(Link, { to: "/login" }, /* @__PURE__ */ import_react10.default.createElement(Button_default, null, "Sign In")), /* @__PURE__ */ import_react10.default.createElement(Box_default, null, /* @__PURE__ */ import_react10.default.createElement(IconButton_default, { onClick: handleMenu }, /* @__PURE__ */ import_react10.default.createElement(AccountCircleOutlined_default, null)), /* @__PURE__ */ import_react10.default.createElement(
+    return /* @__PURE__ */ import_react10.default.createElement(AppBar_default, { position: "static" }, /* @__PURE__ */ import_react10.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react10.default.createElement(Stack_default, { direction: "row", sx: { flexGrow: 1 } }, tabs2.map(([tabText, tabTarget]) => /* @__PURE__ */ import_react10.default.createElement(NavbarTab, { key: tabText, text: tabText, target: tabTarget }))), /* @__PURE__ */ import_react10.default.createElement(Stack_default, { direction: "row" }, /* @__PURE__ */ import_react10.default.createElement(NavbarTab, { text: "Sign In", target: "/login" }), /* @__PURE__ */ import_react10.default.createElement(Box_default, null, /* @__PURE__ */ import_react10.default.createElement(IconButton_default, { onClick: handleMenu, disableRipple: true }, /* @__PURE__ */ import_react10.default.createElement(AccountCircleOutlined_default, null)), /* @__PURE__ */ import_react10.default.createElement(
       Menu_default,
       {
         anchorEl,
@@ -39065,8 +39065,8 @@ Please use another name.` : formatMuiErrorMessage(18));
         open: Boolean(anchorEl),
         onClose: handleClose
       },
-      /* @__PURE__ */ import_react10.default.createElement(MenuItem_default, { onClick: handleClose }, "Profile"),
-      /* @__PURE__ */ import_react10.default.createElement(MenuItem_default, { onClick: handleClose }, "Logout")
+      /* @__PURE__ */ import_react10.default.createElement(MenuItem_default, { onClick: handleClose, disableRipple: true }, "Profile"),
+      /* @__PURE__ */ import_react10.default.createElement(MenuItem_default, { onClick: handleClose, disableRipple: true }, "Logout")
     )))));
   }
   NavbarTab.propTypes = {

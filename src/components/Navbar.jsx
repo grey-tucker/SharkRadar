@@ -13,7 +13,7 @@ function NavbarTab(props) {
 
 	return (
 		<Link to={target} style={{ textDecoration: "none" }}>
-			<Button>
+			<Button disableRipple>
 				{text}
 			</Button>
 		</Link>
@@ -44,13 +44,9 @@ function Navbar(props) {
 					}
 				</Stack>
 				<Stack direction="row">
-					<Link to="/login">
-						<Button>
-							{"Sign In"}
-						</Button>
-					</Link>
+					<NavbarTab text="Sign In" target="/login" />
 					<Box>
-						<IconButton onClick={handleMenu}>
+						<IconButton onClick={handleMenu} disableRipple>
 							<AccountCircleOutlined />
 						</IconButton>
 						<Menu
@@ -67,8 +63,8 @@ function Navbar(props) {
 							open={Boolean(anchorEl)}
 							onClose={handleClose}
 						>
-							<MenuItem onClick={handleClose}>{"Profile"}</MenuItem>
-							<MenuItem onClick={handleClose}>{"Logout"}</MenuItem>
+							<MenuItem onClick={handleClose} disableRipple>{"Profile"}</MenuItem>
+							<MenuItem onClick={handleClose} disableRipple>{"Logout"}</MenuItem>
 						</Menu>
 					</Box>
 				</Stack>

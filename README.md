@@ -4,21 +4,22 @@
 
 ### Quick setup
 
-1. Install the node packages:
+1. Clone the repository
+2. Install the node packages:
     ```bash
     npm i
     ```
-2. Run the build:
+3. Run the build:
     ```bash
     npm run build
     ```
     *(or `build:watch` to watch for changes)*
-3. Run the server:
+4. Run the server:
     ```bash
     npm run server
     ```
     *(or `server:watch` to watch for changes)*
-4. Go to: http://localhost:3030
+5. Go to: http://localhost:3030
 
 ### Setting up the node project
 
