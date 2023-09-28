@@ -9,17 +9,24 @@
     ```bash
     npm i
     ```
-3. Run the build:
+3. Create the `.env` file in the root directory and add the following:
+    ```bash
+    DB_USERNAME=<username>
+    DB_PASSWORD=<password>
+    PORT=3030
+    ```
+    *(replace `<>` fields with user credentials)*
+4. Run the build:
     ```bash
     npm run build
     ```
     *(or `build:watch` to watch for changes)*
-4. Run the server:
+5. Run the server:
     ```bash
     npm run server
     ```
     *(or `server:watch` to watch for changes)*
-5. Go to: http://localhost:3030
+6. Go to: http://localhost:3030
 
 ### Setting up the node project
 
