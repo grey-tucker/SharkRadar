@@ -6,7 +6,7 @@ const connectionString = `mongodb+srv://${dbUsername}:${dbPassword}@sharkradar.s
 const client = new MongoClient(connectionString, {
 	serverApi: {
 		version: ServerApiVersion.v1,
-		deprecationErrors: true,
+		deprecationErrors: true
 	}
 });
 

@@ -30,9 +30,7 @@ app.get([
 });
 
 // Status 400
-app.get([
-	"*"
-], (req, res) => {
+app.get("*", (req, res) => {
 	res.status(404);
 	res.sendFile(path.join(__dirname, "../public", "index.html"));
 });

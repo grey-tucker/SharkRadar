@@ -39103,7 +39103,7 @@ Please use another name.` : formatMuiErrorMessage(18));
   }
   var HomePage_default = Home;
 
-  // src/utils/route.js
+  // src/utils/page-route.js
   var PageRoute = class {
     /**
      * @param {string} path
@@ -39122,7 +39122,7 @@ Please use another name.` : formatMuiErrorMessage(18));
       this.index = index;
     }
   };
-  var route_default = PageRoute;
+  var page_route_default = PageRoute;
 
   // src/pages/AdoptPage.jsx
   function Adopt() {
@@ -39173,13 +39173,13 @@ Please use another name.` : formatMuiErrorMessage(18));
     ["Facts", "/facts"]
   ];
   var routes = [
-    new route_default("/", HomePage_default, true),
-    new route_default("/adopt", AdoptPage_default),
-    new route_default("/about", AboutPage_default),
-    new route_default("/facts", FactsPage_default),
-    new route_default("/login", LoginPage_default),
-    new route_default("/profile", ProfilePage_default),
-    new route_default("*", NoPage_default)
+    new page_route_default("/", HomePage_default, true),
+    new page_route_default("/adopt", AdoptPage_default),
+    new page_route_default("/about", AboutPage_default),
+    new page_route_default("/facts", FactsPage_default),
+    new page_route_default("/login", LoginPage_default),
+    new page_route_default("/profile", ProfilePage_default),
+    new page_route_default("*", NoPage_default)
   ];
   var root = (0, import_client.createRoot)(document.getElementById("root"));
   root.render(

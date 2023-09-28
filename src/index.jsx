@@ -4,7 +4,7 @@ import App from "./components/App";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import { BrowserRouter } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import PageRoute from "./utils/route";
+import PageRoute from "./utils/page-route";
 import AdoptPage from "./pages/AdoptPage";
 import AboutPage from "./pages/AboutPage";
 import FactsPage from "./pages/FactsPage";
