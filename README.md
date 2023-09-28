@@ -9,44 +9,46 @@
     ```bash
     npm i
     ```
-3. Run the build:
+3. Create the `.env` file in the root directory and add the following:
+    ```bash
+    DB_USERNAME=<username>
+    DB_PASSWORD=<password>
+    PORT=3030
+    ```
+    *(replace `<>` fields with user credentials)*
+4. Run the build:
     ```bash
     npm run build
     ```
     *(or `build:watch` to watch for changes)*
-4. Run the server:
+5. Run the server:
     ```bash
     npm run server
     ```
     *(or `server:watch` to watch for changes)*
-5. Go to: http://localhost:3030
+6. Go to: http://localhost:3030
 
-### Setting up the node project
+### Packages used
 
-*(This is only necessary if you want to create a new node project)*
+- **esbuild**: Bundles and minifies the JavaScript code
+- **React**: JavaScript frontend library
+- **Material UI**: UI component library
+- **MongoDB**: Database
+- **dotenv**: Environment variables
+- **Express**: Web server
+- **ESLint**: Helps find and fix problems in JavaScript code
 
-1. Create the node project:
-    ```bash
-    npm init
-    ```
-2. Install the following node packages:
-    ```bash
-    npm init @eslint/config
-    ```
-    ```bash
-    npm i @mui/icons-material @mui/material @emotion/styled @emotion/react mongodb
-    ```
-    ```bash
-    npm i -D esbuild eslint-plugin-react-hooks express dotenv react react-dom react-router-dom
-    ```
-    **Purpose of packages:**
-    - **esbuild**: Bundles and minifies the JavaScript code
-    - **React**: JavaScript frontend library
-    - **Material UI**: UI component library
-    - **MongoDB**: Database
-    - **dotenv**: Environment variables
-    - **Express**: Web server
-    - **ESLint**: Helps find and fix problems in JavaScript code
+*(Do not run the scripts below if you have cloned the repo and ran `npm i`)*
+
+```bash
+npm init @eslint/config
+```
+```bash
+npm i @mui/icons-material @mui/material @emotion/styled @emotion/react mongodb
+```
+```bash
+npm i -D esbuild eslint-plugin-react-hooks express dotenv react react-dom react-router-dom
+```
 
 ### Structure
 
