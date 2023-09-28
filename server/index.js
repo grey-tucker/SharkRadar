@@ -1,29 +1,23 @@
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
-import dotenv from "dotenv";
-import { MongoClient } from "mongodb";
+import { port } from "./utils/load-env.js";
+import db from "./utils/connect-db.js";
 
-dotenv.config();
-
-const port = process.env.PORT || 3030;
+try {
+	db.command({ ping: 1 });
+} catch (err) {
+	console.error(err);
+}
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const connectionString = process.env.CONNECTION_STRING || "";
-
-const client = new MongoClient(connectionString);
-
 const app = express();
-
-app.use((req, res, next) => {
-	console.log(`${req.method} ${req.url}`);
-	next();
-});
 
 app.use(express.static("./public"));
 
+// Status 200
 app.get([
 	"/",
 	"/about",
@@ -35,6 +29,7 @@ app.get([
 	res.sendFile(path.join(__dirname, "../public", "index.html"));
 });
 
+// Status 400
 app.get([
 	"*"
 ], (req, res) => {
