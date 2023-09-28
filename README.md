@@ -58,3 +58,4 @@
         - **/utils**: Utility functions
 - **/server**: Server-side code
     - **/routes**: Express routes for API components
+- **/misc**: Whatever you want!

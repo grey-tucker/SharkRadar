@@ -6,6 +6,7 @@
   var __getProtoOf = Object.getPrototypeOf;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
   var __pow = Math.pow;
+  var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
   var __commonJS = (cb, mod) => function __require() {
     return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
   };
@@ -25,6 +26,10 @@
     isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
     mod
   ));
+  var __publicField = (obj, key, value) => {
+    __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+    return value;
+  };
 
   // node_modules/react/cjs/react.development.js
   var require_react_development = __commonJS({
@@ -37238,53 +37243,11 @@ Please use another name.` : formatMuiErrorMessage(18));
     d: "M12 6c-1.93 0-3.5 1.57-3.5 3.5S10.07 13 12 13s3.5-1.57 3.5-3.5S13.93 6 12 6zm0 5c-.83 0-1.5-.67-1.5-1.5S11.17 8 12 8s1.5.67 1.5 1.5S12.83 11 12 11z"
   }, "1")], "AccountCircleOutlined");
 
-  // src/components/Navbar.jsx
-  function NavbarTab(props) {
-    const { text } = props;
-    return /* @__PURE__ */ import_react10.default.createElement(Button_default, null, text);
-  }
-  function Navbar(props) {
-    const { pages } = props;
-    const [anchorEl, setAnchorEl] = import_react10.default.useState(null);
-    const handleMenu = (event) => {
-      setAnchorEl(event.currentTarget);
-    };
-    const handleClose = () => {
-      setAnchorEl(null);
-    };
-    return /* @__PURE__ */ import_react10.default.createElement(AppBar_default, { position: "static" }, /* @__PURE__ */ import_react10.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react10.default.createElement(Stack_default, { direction: "row", sx: { flexGrow: 1 } }, pages.map((tab) => /* @__PURE__ */ import_react10.default.createElement(NavbarTab, { key: tab, text: tab }))), /* @__PURE__ */ import_react10.default.createElement(Stack_default, { direction: "row" }, /* @__PURE__ */ import_react10.default.createElement(Button_default, null, "Sign In"), /* @__PURE__ */ import_react10.default.createElement(Box_default, null, /* @__PURE__ */ import_react10.default.createElement(IconButton_default, { onClick: handleMenu }, /* @__PURE__ */ import_react10.default.createElement(AccountCircleOutlined_default, null)), /* @__PURE__ */ import_react10.default.createElement(
-      Menu_default,
-      {
-        anchorEl,
-        anchorOrigin: {
-          vertical: "bottom",
-          horizontal: "right"
-        },
-        keepMounted: true,
-        transformOrigin: {
-          vertical: "bottom",
-          horizontal: "right"
-        },
-        open: Boolean(anchorEl),
-        onClose: handleClose
-      },
-      /* @__PURE__ */ import_react10.default.createElement(MenuItem_default, { onClick: handleClose }, "Profile"),
-      /* @__PURE__ */ import_react10.default.createElement(MenuItem_default, { onClick: handleClose }, "Logout")
-    )))));
-  }
-  NavbarTab.propTypes = {
-    text: import_prop_types38.default.string
-  };
-  Navbar.propTypes = {
-    pages: import_prop_types38.default.arrayOf(import_prop_types38.default.string).isRequired
-  };
-  var Navbar_default = Navbar;
-
   // node_modules/react-router-dom/dist/index.js
-  var React52 = __toESM(require_react());
+  var React51 = __toESM(require_react());
 
   // node_modules/react-router/dist/index.js
-  var React51 = __toESM(require_react());
+  var React50 = __toESM(require_react());
 
   // node_modules/@remix-run/router/dist/router.js
   function _extends2() {
@@ -37538,7 +37501,7 @@ Please use another name.` : formatMuiErrorMessage(18));
     ResultType2["redirect"] = "redirect";
     ResultType2["error"] = "error";
   })(ResultType || (ResultType = {}));
-  function matchRoutes(routes, locationArg, basename) {
+  function matchRoutes(routes2, locationArg, basename) {
     if (basename === void 0) {
       basename = "/";
     }
@@ -37547,7 +37510,7 @@ Please use another name.` : formatMuiErrorMessage(18));
     if (pathname == null) {
       return null;
     }
-    let branches = flattenRoutes(routes);
+    let branches = flattenRoutes(routes2);
     rankRouteBranches(branches);
     let matches = null;
     for (let i = 0; matches == null && i < branches.length; ++i) {
@@ -37578,7 +37541,7 @@ Please use another name.` : formatMuiErrorMessage(18));
       handle: route.handle
     };
   }
-  function flattenRoutes(routes, branches, parentsMeta, parentPath) {
+  function flattenRoutes(routes2, branches, parentsMeta, parentPath) {
     if (branches === void 0) {
       branches = [];
     }
@@ -37619,7 +37582,7 @@ Please use another name.` : formatMuiErrorMessage(18));
         routesMeta
       });
     };
-    routes.forEach((route, index) => {
+    routes2.forEach((route, index) => {
       var _route$path;
       if (route.path === "" || !((_route$path = route.path) != null && _route$path.includes("?"))) {
         flattenRoute(route, index);
@@ -37902,27 +37865,27 @@ Please use another name.` : formatMuiErrorMessage(18));
     };
     return _extends3.apply(this, arguments);
   }
-  var DataRouterContext = /* @__PURE__ */ React51.createContext(null);
+  var DataRouterContext = /* @__PURE__ */ React50.createContext(null);
   if (true) {
     DataRouterContext.displayName = "DataRouter";
   }
-  var DataRouterStateContext = /* @__PURE__ */ React51.createContext(null);
+  var DataRouterStateContext = /* @__PURE__ */ React50.createContext(null);
   if (true) {
     DataRouterStateContext.displayName = "DataRouterState";
   }
-  var AwaitContext = /* @__PURE__ */ React51.createContext(null);
+  var AwaitContext = /* @__PURE__ */ React50.createContext(null);
   if (true) {
     AwaitContext.displayName = "Await";
   }
-  var NavigationContext = /* @__PURE__ */ React51.createContext(null);
+  var NavigationContext = /* @__PURE__ */ React50.createContext(null);
   if (true) {
     NavigationContext.displayName = "Navigation";
   }
-  var LocationContext = /* @__PURE__ */ React51.createContext(null);
+  var LocationContext = /* @__PURE__ */ React50.createContext(null);
   if (true) {
     LocationContext.displayName = "Location";
   }
-  var RouteContext = /* @__PURE__ */ React51.createContext({
+  var RouteContext = /* @__PURE__ */ React50.createContext({
     outlet: null,
     matches: [],
     isDataRoute: false
@@ -37930,7 +37893,7 @@ Please use another name.` : formatMuiErrorMessage(18));
   if (true) {
     RouteContext.displayName = "Route";
   }
-  var RouteErrorContext = /* @__PURE__ */ React51.createContext(null);
+  var RouteErrorContext = /* @__PURE__ */ React50.createContext(null);
   if (true) {
     RouteErrorContext.displayName = "RouteError";
   }
@@ -37947,7 +37910,7 @@ Please use another name.` : formatMuiErrorMessage(18));
     let {
       basename,
       navigator: navigator2
-    } = React51.useContext(NavigationContext);
+    } = React50.useContext(NavigationContext);
     let {
       hash: hash2,
       pathname,
@@ -37966,7 +37929,7 @@ Please use another name.` : formatMuiErrorMessage(18));
     });
   }
   function useInRouterContext() {
-    return React51.useContext(LocationContext) != null;
+    return React50.useContext(LocationContext) != null;
   }
   function useLocation() {
     !useInRouterContext() ? true ? invariant(
@@ -37975,19 +37938,19 @@ Please use another name.` : formatMuiErrorMessage(18));
       // router loaded. We can help them understand how to avoid that.
       "useLocation() may be used only in the context of a <Router> component."
     ) : invariant(false) : void 0;
-    return React51.useContext(LocationContext).location;
+    return React50.useContext(LocationContext).location;
   }
   var navigateEffectWarning = "You should call navigate() in a React.useEffect(), not when your component is first rendered.";
   function useIsomorphicLayoutEffect(cb) {
-    let isStatic = React51.useContext(NavigationContext).static;
+    let isStatic = React50.useContext(NavigationContext).static;
     if (!isStatic) {
-      React51.useLayoutEffect(cb);
+      React50.useLayoutEffect(cb);
     }
   }
   function useNavigate() {
     let {
       isDataRoute
-    } = React51.useContext(RouteContext);
+    } = React50.useContext(RouteContext);
     return isDataRoute ? useNavigateStable() : useNavigateUnstable();
   }
   function useNavigateUnstable() {
@@ -37997,23 +37960,23 @@ Please use another name.` : formatMuiErrorMessage(18));
       // router loaded. We can help them understand how to avoid that.
       "useNavigate() may be used only in the context of a <Router> component."
     ) : invariant(false) : void 0;
-    let dataRouterContext = React51.useContext(DataRouterContext);
+    let dataRouterContext = React50.useContext(DataRouterContext);
     let {
       basename,
       navigator: navigator2
-    } = React51.useContext(NavigationContext);
+    } = React50.useContext(NavigationContext);
     let {
       matches
-    } = React51.useContext(RouteContext);
+    } = React50.useContext(RouteContext);
     let {
       pathname: locationPathname
     } = useLocation();
     let routePathnamesJson = JSON.stringify(getPathContributingMatches(matches).map((match2) => match2.pathnameBase));
-    let activeRef = React51.useRef(false);
+    let activeRef = React50.useRef(false);
     useIsomorphicLayoutEffect(() => {
       activeRef.current = true;
     });
-    let navigate = React51.useCallback(function(to, options) {
+    let navigate = React50.useCallback(function(to, options) {
       if (options === void 0) {
         options = {};
       }
@@ -38038,17 +38001,17 @@ Please use another name.` : formatMuiErrorMessage(18));
     } = _temp2 === void 0 ? {} : _temp2;
     let {
       matches
-    } = React51.useContext(RouteContext);
+    } = React50.useContext(RouteContext);
     let {
       pathname: locationPathname
     } = useLocation();
     let routePathnamesJson = JSON.stringify(getPathContributingMatches(matches).map((match2) => match2.pathnameBase));
-    return React51.useMemo(() => resolveTo(to, JSON.parse(routePathnamesJson), locationPathname, relative === "path"), [to, routePathnamesJson, locationPathname, relative]);
+    return React50.useMemo(() => resolveTo(to, JSON.parse(routePathnamesJson), locationPathname, relative === "path"), [to, routePathnamesJson, locationPathname, relative]);
   }
-  function useRoutes(routes, locationArg) {
-    return useRoutesImpl(routes, locationArg);
+  function useRoutes(routes2, locationArg) {
+    return useRoutesImpl(routes2, locationArg);
   }
-  function useRoutesImpl(routes, locationArg, dataRouterState) {
+  function useRoutesImpl(routes2, locationArg, dataRouterState) {
     !useInRouterContext() ? true ? invariant(
       false,
       // TODO: This error is probably because they somehow have 2 versions of the
@@ -38057,10 +38020,10 @@ Please use another name.` : formatMuiErrorMessage(18));
     ) : invariant(false) : void 0;
     let {
       navigator: navigator2
-    } = React51.useContext(NavigationContext);
+    } = React50.useContext(NavigationContext);
     let {
       matches: parentMatches
-    } = React51.useContext(RouteContext);
+    } = React50.useContext(RouteContext);
     let routeMatch = parentMatches[parentMatches.length - 1];
     let parentParams = routeMatch ? routeMatch.params : {};
     let parentPathname = routeMatch ? routeMatch.pathname : "/";
@@ -38084,7 +38047,7 @@ Please use another name.` : formatMuiErrorMessage(18));
     }
     let pathname = location.pathname || "/";
     let remainingPathname = parentPathnameBase === "/" ? pathname : pathname.slice(parentPathnameBase.length) || "/";
-    let matches = matchRoutes(routes, {
+    let matches = matchRoutes(routes2, {
       pathname: remainingPathname
     });
     if (true) {
@@ -38105,7 +38068,7 @@ Please use another name.` : formatMuiErrorMessage(18));
       ])
     })), parentMatches, dataRouterState);
     if (locationArg && renderedMatches) {
-      return /* @__PURE__ */ React51.createElement(LocationContext.Provider, {
+      return /* @__PURE__ */ React50.createElement(LocationContext.Provider, {
         value: {
           location: _extends3({
             pathname: "/",
@@ -38136,22 +38099,22 @@ Please use another name.` : formatMuiErrorMessage(18));
     let devInfo = null;
     if (true) {
       console.error("Error handled by React Router default ErrorBoundary:", error);
-      devInfo = /* @__PURE__ */ React51.createElement(React51.Fragment, null, /* @__PURE__ */ React51.createElement("p", null, "\u{1F4BF} Hey developer \u{1F44B}"), /* @__PURE__ */ React51.createElement("p", null, "You can provide a way better UX than this when your app throws errors by providing your own ", /* @__PURE__ */ React51.createElement("code", {
+      devInfo = /* @__PURE__ */ React50.createElement(React50.Fragment, null, /* @__PURE__ */ React50.createElement("p", null, "\u{1F4BF} Hey developer \u{1F44B}"), /* @__PURE__ */ React50.createElement("p", null, "You can provide a way better UX than this when your app throws errors by providing your own ", /* @__PURE__ */ React50.createElement("code", {
         style: codeStyles
-      }, "ErrorBoundary"), " or", " ", /* @__PURE__ */ React51.createElement("code", {
+      }, "ErrorBoundary"), " or", " ", /* @__PURE__ */ React50.createElement("code", {
         style: codeStyles
       }, "errorElement"), " prop on your route."));
     }
-    return /* @__PURE__ */ React51.createElement(React51.Fragment, null, /* @__PURE__ */ React51.createElement("h2", null, "Unexpected Application Error!"), /* @__PURE__ */ React51.createElement("h3", {
+    return /* @__PURE__ */ React50.createElement(React50.Fragment, null, /* @__PURE__ */ React50.createElement("h2", null, "Unexpected Application Error!"), /* @__PURE__ */ React50.createElement("h3", {
       style: {
         fontStyle: "italic"
       }
-    }, message), stack ? /* @__PURE__ */ React51.createElement("pre", {
+    }, message), stack ? /* @__PURE__ */ React50.createElement("pre", {
       style: preStyles
     }, stack) : null, devInfo);
   }
-  var defaultErrorElement = /* @__PURE__ */ React51.createElement(DefaultErrorComponent, null);
-  var RenderErrorBoundary = class extends React51.Component {
+  var defaultErrorElement = /* @__PURE__ */ React50.createElement(DefaultErrorComponent, null);
+  var RenderErrorBoundary = class extends React50.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -38183,9 +38146,9 @@ Please use another name.` : formatMuiErrorMessage(18));
       console.error("React Router caught the following error during render", error, errorInfo);
     }
     render() {
-      return this.state.error ? /* @__PURE__ */ React51.createElement(RouteContext.Provider, {
+      return this.state.error ? /* @__PURE__ */ React50.createElement(RouteContext.Provider, {
         value: this.props.routeContext
-      }, /* @__PURE__ */ React51.createElement(RouteErrorContext.Provider, {
+      }, /* @__PURE__ */ React50.createElement(RouteErrorContext.Provider, {
         value: this.state.error,
         children: this.props.component
       })) : this.props.children;
@@ -38197,11 +38160,11 @@ Please use another name.` : formatMuiErrorMessage(18));
       match: match2,
       children
     } = _ref;
-    let dataRouterContext = React51.useContext(DataRouterContext);
+    let dataRouterContext = React50.useContext(DataRouterContext);
     if (dataRouterContext && dataRouterContext.static && dataRouterContext.staticContext && (match2.route.errorElement || match2.route.ErrorBoundary)) {
       dataRouterContext.staticContext._deepestRenderedBoundaryId = match2.route.id;
     }
-    return /* @__PURE__ */ React51.createElement(RouteContext.Provider, {
+    return /* @__PURE__ */ React50.createElement(RouteContext.Provider, {
       value: routeContext
     }, children);
   }
@@ -38240,13 +38203,13 @@ Please use another name.` : formatMuiErrorMessage(18));
         if (error) {
           children = errorElement;
         } else if (match2.route.Component) {
-          children = /* @__PURE__ */ React51.createElement(match2.route.Component, null);
+          children = /* @__PURE__ */ React50.createElement(match2.route.Component, null);
         } else if (match2.route.element) {
           children = match2.route.element;
         } else {
           children = outlet;
         }
-        return /* @__PURE__ */ React51.createElement(RenderedRoute, {
+        return /* @__PURE__ */ React50.createElement(RenderedRoute, {
           match: match2,
           routeContext: {
             outlet,
@@ -38256,7 +38219,7 @@ Please use another name.` : formatMuiErrorMessage(18));
           children
         });
       };
-      return dataRouterState && (match2.route.ErrorBoundary || match2.route.errorElement || index === 0) ? /* @__PURE__ */ React51.createElement(RenderErrorBoundary, {
+      return dataRouterState && (match2.route.ErrorBoundary || match2.route.errorElement || index === 0) ? /* @__PURE__ */ React50.createElement(RenderErrorBoundary, {
         location: dataRouterState.location,
         revalidation: dataRouterState.revalidation,
         component: errorElement,
@@ -38293,17 +38256,17 @@ Please use another name.` : formatMuiErrorMessage(18));
     return hookName + " must be used within a data router.  See https://reactrouter.com/routers/picking-a-router.";
   }
   function useDataRouterContext(hookName) {
-    let ctx = React51.useContext(DataRouterContext);
+    let ctx = React50.useContext(DataRouterContext);
     !ctx ? true ? invariant(false, getDataRouterConsoleError(hookName)) : invariant(false) : void 0;
     return ctx;
   }
   function useDataRouterState(hookName) {
-    let state = React51.useContext(DataRouterStateContext);
+    let state = React50.useContext(DataRouterStateContext);
     !state ? true ? invariant(false, getDataRouterConsoleError(hookName)) : invariant(false) : void 0;
     return state;
   }
   function useRouteContext(hookName) {
-    let route = React51.useContext(RouteContext);
+    let route = React50.useContext(RouteContext);
     !route ? true ? invariant(false, getDataRouterConsoleError(hookName)) : invariant(false) : void 0;
     return route;
   }
@@ -38325,11 +38288,11 @@ Please use another name.` : formatMuiErrorMessage(18));
       matches,
       loaderData
     } = useDataRouterState(DataRouterStateHook.UseMatches);
-    return React51.useMemo(() => matches.map((m) => convertRouteMatchToUiMatch(m, loaderData)), [matches, loaderData]);
+    return React50.useMemo(() => matches.map((m) => convertRouteMatchToUiMatch(m, loaderData)), [matches, loaderData]);
   }
   function useRouteError() {
     var _state$errors;
-    let error = React51.useContext(RouteErrorContext);
+    let error = React50.useContext(RouteErrorContext);
     let state = useDataRouterState(DataRouterStateHook.UseRouteError);
     let routeId = useCurrentRouteId(DataRouterStateHook.UseRouteError);
     if (error) {
@@ -38342,11 +38305,11 @@ Please use another name.` : formatMuiErrorMessage(18));
       router
     } = useDataRouterContext(DataRouterHook.UseNavigateStable);
     let id = useCurrentRouteId(DataRouterStateHook.UseNavigateStable);
-    let activeRef = React51.useRef(false);
+    let activeRef = React50.useRef(false);
     useIsomorphicLayoutEffect(() => {
       activeRef.current = true;
     });
-    let navigate = React51.useCallback(function(to, options) {
+    let navigate = React50.useCallback(function(to, options) {
       if (options === void 0) {
         options = {};
       }
@@ -38371,7 +38334,7 @@ Please use another name.` : formatMuiErrorMessage(18));
     }
   }
   var START_TRANSITION = "startTransition";
-  var startTransitionImpl = React51[START_TRANSITION];
+  var startTransitionImpl = React50[START_TRANSITION];
   function Route(_props) {
     true ? invariant(false, "A <Route> is only ever to be used as the child of <Routes> element, never rendered directly. Please wrap your <Route> in a <Routes>.") : invariant(false);
   }
@@ -38386,7 +38349,7 @@ Please use another name.` : formatMuiErrorMessage(18));
     } = _ref5;
     !!useInRouterContext() ? true ? invariant(false, "You cannot render a <Router> inside another <Router>. You should never have more than one in your app.") : invariant(false) : void 0;
     let basename = basenameProp.replace(/^\/*/, "/");
-    let navigationContext = React51.useMemo(() => ({
+    let navigationContext = React50.useMemo(() => ({
       basename,
       navigator: navigator2,
       static: staticProp
@@ -38401,7 +38364,7 @@ Please use another name.` : formatMuiErrorMessage(18));
       state = null,
       key = "default"
     } = locationProp;
-    let locationContext = React51.useMemo(() => {
+    let locationContext = React50.useMemo(() => {
       let trailingPathname = stripBasename(pathname, basename);
       if (trailingPathname == null) {
         return null;
@@ -38421,9 +38384,9 @@ Please use another name.` : formatMuiErrorMessage(18));
     if (locationContext == null) {
       return null;
     }
-    return /* @__PURE__ */ React51.createElement(NavigationContext.Provider, {
+    return /* @__PURE__ */ React50.createElement(NavigationContext.Provider, {
       value: navigationContext
-    }, /* @__PURE__ */ React51.createElement(LocationContext.Provider, {
+    }, /* @__PURE__ */ React50.createElement(LocationContext.Provider, {
       children,
       value: locationContext
     }));
@@ -38441,14 +38404,14 @@ Please use another name.` : formatMuiErrorMessage(18));
     if (parentPath === void 0) {
       parentPath = [];
     }
-    let routes = [];
-    React51.Children.forEach(children, (element, index) => {
-      if (!/* @__PURE__ */ React51.isValidElement(element)) {
+    let routes2 = [];
+    React50.Children.forEach(children, (element, index) => {
+      if (!/* @__PURE__ */ React50.isValidElement(element)) {
         return;
       }
       let treePath = [...parentPath, index];
-      if (element.type === React51.Fragment) {
-        routes.push.apply(routes, createRoutesFromChildren(element.props.children, treePath));
+      if (element.type === React50.Fragment) {
+        routes2.push.apply(routes2, createRoutesFromChildren(element.props.children, treePath));
         return;
       }
       !(element.type === Route) ? true ? invariant(false, "[" + (typeof element.type === "string" ? element.type : element.type.name) + "] is not a <Route> component. All component children of <Routes> must be a <Route> or <React.Fragment>") : invariant(false) : void 0;
@@ -38472,9 +38435,9 @@ Please use another name.` : formatMuiErrorMessage(18));
       if (element.props.children) {
         route.children = createRoutesFromChildren(element.props.children, treePath);
       }
-      routes.push(route);
+      routes2.push(route);
     });
-    return routes;
+    return routes2;
   }
 
   // node_modules/react-router-dom/dist/index.js
@@ -38612,7 +38575,7 @@ Please use another name.` : formatMuiErrorMessage(18));
   var _excluded211 = ["aria-current", "caseSensitive", "className", "end", "style", "to", "children"];
   var _excluded34 = ["reloadDocument", "replace", "state", "method", "action", "onSubmit", "submit", "relative", "preventScrollReset"];
   var START_TRANSITION2 = "startTransition";
-  var startTransitionImpl2 = React52[START_TRANSITION2];
+  var startTransitionImpl2 = React51[START_TRANSITION2];
   function BrowserRouter(_ref) {
     let {
       basename,
@@ -38620,7 +38583,7 @@ Please use another name.` : formatMuiErrorMessage(18));
       future,
       window: window2
     } = _ref;
-    let historyRef = React52.useRef();
+    let historyRef = React51.useRef();
     if (historyRef.current == null) {
       historyRef.current = createBrowserHistory({
         window: window2,
@@ -38628,18 +38591,18 @@ Please use another name.` : formatMuiErrorMessage(18));
       });
     }
     let history = historyRef.current;
-    let [state, setStateImpl] = React52.useState({
+    let [state, setStateImpl] = React51.useState({
       action: history.action,
       location: history.location
     });
     let {
       v7_startTransition
     } = future || {};
-    let setState = React52.useCallback((newState) => {
+    let setState = React51.useCallback((newState) => {
       v7_startTransition && startTransitionImpl2 ? startTransitionImpl2(() => setStateImpl(newState)) : setStateImpl(newState);
     }, [setStateImpl, v7_startTransition]);
-    React52.useLayoutEffect(() => history.listen(setState), [history, setState]);
-    return /* @__PURE__ */ React52.createElement(Router, {
+    React51.useLayoutEffect(() => history.listen(setState), [history, setState]);
+    return /* @__PURE__ */ React51.createElement(Router, {
       basename,
       children,
       location: state.location,
@@ -38654,18 +38617,18 @@ Please use another name.` : formatMuiErrorMessage(18));
       future,
       history
     } = _ref3;
-    let [state, setStateImpl] = React52.useState({
+    let [state, setStateImpl] = React51.useState({
       action: history.action,
       location: history.location
     });
     let {
       v7_startTransition
     } = future || {};
-    let setState = React52.useCallback((newState) => {
+    let setState = React51.useCallback((newState) => {
       v7_startTransition && startTransitionImpl2 ? startTransitionImpl2(() => setStateImpl(newState)) : setStateImpl(newState);
     }, [setStateImpl, v7_startTransition]);
-    React52.useLayoutEffect(() => history.listen(setState), [history, setState]);
-    return /* @__PURE__ */ React52.createElement(Router, {
+    React51.useLayoutEffect(() => history.listen(setState), [history, setState]);
+    return /* @__PURE__ */ React51.createElement(Router, {
       basename,
       children,
       location: state.location,
@@ -38678,7 +38641,7 @@ Please use another name.` : formatMuiErrorMessage(18));
   }
   var isBrowser3 = typeof window !== "undefined" && typeof window.document !== "undefined" && typeof window.document.createElement !== "undefined";
   var ABSOLUTE_URL_REGEX = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;
-  var Link = /* @__PURE__ */ React52.forwardRef(function LinkWithRef(_ref4, ref) {
+  var Link = /* @__PURE__ */ React51.forwardRef(function LinkWithRef(_ref4, ref) {
     let {
       onClick,
       relative,
@@ -38691,7 +38654,7 @@ Please use another name.` : formatMuiErrorMessage(18));
     } = _ref4, rest = _objectWithoutPropertiesLoose2(_ref4, _excluded33);
     let {
       basename
-    } = React52.useContext(NavigationContext);
+    } = React51.useContext(NavigationContext);
     let absoluteHref;
     let isExternal = false;
     if (typeof to === "string" && ABSOLUTE_URL_REGEX.test(to)) {
@@ -38730,7 +38693,7 @@ Please use another name.` : formatMuiErrorMessage(18));
     }
     return (
       // eslint-disable-next-line jsx-a11y/anchor-has-content
-      /* @__PURE__ */ React52.createElement("a", _extends4({}, rest, {
+      /* @__PURE__ */ React51.createElement("a", _extends4({}, rest, {
         href: absoluteHref || href,
         onClick: isExternal || reloadDocument ? onClick : handleClick,
         ref,
@@ -38741,7 +38704,7 @@ Please use another name.` : formatMuiErrorMessage(18));
   if (true) {
     Link.displayName = "Link";
   }
-  var NavLink = /* @__PURE__ */ React52.forwardRef(function NavLinkWithRef(_ref5, ref) {
+  var NavLink = /* @__PURE__ */ React51.forwardRef(function NavLinkWithRef(_ref5, ref) {
     let {
       "aria-current": ariaCurrentProp = "page",
       caseSensitive = false,
@@ -38755,10 +38718,10 @@ Please use another name.` : formatMuiErrorMessage(18));
       relative: rest.relative
     });
     let location = useLocation();
-    let routerState = React52.useContext(DataRouterStateContext);
+    let routerState = React51.useContext(DataRouterStateContext);
     let {
       navigator: navigator2
-    } = React52.useContext(NavigationContext);
+    } = React51.useContext(NavigationContext);
     let toPathname = navigator2.encodeLocation ? navigator2.encodeLocation(path).pathname : path.pathname;
     let locationPathname = location.pathname;
     let nextLocationPathname = routerState && routerState.navigation && routerState.navigation.location ? routerState.navigation.location.pathname : null;
@@ -38783,7 +38746,7 @@ Please use another name.` : formatMuiErrorMessage(18));
       isActive,
       isPending
     }) : styleProp;
-    return /* @__PURE__ */ React52.createElement(Link, _extends4({}, rest, {
+    return /* @__PURE__ */ React51.createElement(Link, _extends4({}, rest, {
       "aria-current": ariaCurrent,
       className,
       ref,
@@ -38797,9 +38760,9 @@ Please use another name.` : formatMuiErrorMessage(18));
   if (true) {
     NavLink.displayName = "NavLink";
   }
-  var Form = /* @__PURE__ */ React52.forwardRef((props, ref) => {
+  var Form = /* @__PURE__ */ React51.forwardRef((props, ref) => {
     let submit = useSubmit();
-    return /* @__PURE__ */ React52.createElement(FormImpl, _extends4({}, props, {
+    return /* @__PURE__ */ React51.createElement(FormImpl, _extends4({}, props, {
       submit,
       ref
     }));
@@ -38807,7 +38770,7 @@ Please use another name.` : formatMuiErrorMessage(18));
   if (true) {
     Form.displayName = "Form";
   }
-  var FormImpl = /* @__PURE__ */ React52.forwardRef((_ref6, forwardedRef) => {
+  var FormImpl = /* @__PURE__ */ React51.forwardRef((_ref6, forwardedRef) => {
     let {
       reloadDocument,
       replace: replace2,
@@ -38838,7 +38801,7 @@ Please use another name.` : formatMuiErrorMessage(18));
         preventScrollReset
       });
     };
-    return /* @__PURE__ */ React52.createElement("form", _extends4({
+    return /* @__PURE__ */ React51.createElement("form", _extends4({
       ref: forwardedRef,
       method: formMethod,
       action: formAction,
@@ -38878,12 +38841,12 @@ Please use another name.` : formatMuiErrorMessage(18));
     return hookName + " must be used within a data router.  See https://reactrouter.com/routers/picking-a-router.";
   }
   function useDataRouterContext2(hookName) {
-    let ctx = React52.useContext(DataRouterContext);
+    let ctx = React51.useContext(DataRouterContext);
     !ctx ? true ? invariant(false, getDataRouterConsoleError2(hookName)) : invariant(false) : void 0;
     return ctx;
   }
   function useDataRouterState2(hookName) {
-    let state = React52.useContext(DataRouterStateContext);
+    let state = React51.useContext(DataRouterStateContext);
     !state ? true ? invariant(false, getDataRouterConsoleError2(hookName)) : invariant(false) : void 0;
     return state;
   }
@@ -38900,7 +38863,7 @@ Please use another name.` : formatMuiErrorMessage(18));
     let path = useResolvedPath(to, {
       relative
     });
-    return React52.useCallback((event) => {
+    return React51.useCallback((event) => {
       if (shouldProcessLinkClick(event, target)) {
         event.preventDefault();
         let replace2 = replaceProp !== void 0 ? replaceProp : createPath(location) === createPath(path);
@@ -38924,9 +38887,9 @@ Please use another name.` : formatMuiErrorMessage(18));
     } = useDataRouterContext2(DataRouterHook2.UseSubmit);
     let {
       basename
-    } = React52.useContext(NavigationContext);
+    } = React51.useContext(NavigationContext);
     let currentRouteId = useRouteId();
-    return React52.useCallback(function(target, options) {
+    return React51.useCallback(function(target, options) {
       if (options === void 0) {
         options = {};
       }
@@ -38956,8 +38919,8 @@ Please use another name.` : formatMuiErrorMessage(18));
     } = _temp2 === void 0 ? {} : _temp2;
     let {
       basename
-    } = React52.useContext(NavigationContext);
-    let routeContext = React52.useContext(RouteContext);
+    } = React51.useContext(NavigationContext);
+    let routeContext = React51.useContext(RouteContext);
     !routeContext ? true ? invariant(false, "useFormAction must be used inside a RouteContext") : invariant(false) : void 0;
     let [match2] = routeContext.matches.slice(-1);
     let path = _extends4({}, useResolvedPath(action ? action : ".", {
@@ -38996,17 +38959,17 @@ Please use another name.` : formatMuiErrorMessage(18));
     } = useDataRouterState2(DataRouterStateHook2.UseScrollRestoration);
     let {
       basename
-    } = React52.useContext(NavigationContext);
+    } = React51.useContext(NavigationContext);
     let location = useLocation();
     let matches = useMatches();
     let navigation = useNavigation();
-    React52.useEffect(() => {
+    React51.useEffect(() => {
       window.history.scrollRestoration = "manual";
       return () => {
         window.history.scrollRestoration = "auto";
       };
     }, []);
-    usePageHide(React52.useCallback(() => {
+    usePageHide(React51.useCallback(() => {
       if (navigation.state === "idle") {
         let key = (getKey ? getKey(location, matches) : null) || location.key;
         savedScrollPositions[key] = window.scrollY;
@@ -39015,7 +38978,7 @@ Please use another name.` : formatMuiErrorMessage(18));
       window.history.scrollRestoration = "auto";
     }, [storageKey, getKey, navigation.state, location, matches]));
     if (typeof document !== "undefined") {
-      React52.useLayoutEffect(() => {
+      React51.useLayoutEffect(() => {
         try {
           let sessionPositions = sessionStorage.getItem(storageKey || SCROLL_RESTORATION_STORAGE_KEY);
           if (sessionPositions) {
@@ -39024,7 +38987,7 @@ Please use another name.` : formatMuiErrorMessage(18));
         } catch (e) {
         }
       }, [storageKey]);
-      React52.useLayoutEffect(() => {
+      React51.useLayoutEffect(() => {
         let getKeyWithoutBasename = getKey && basename !== "/" ? (location2, matches2) => getKey(
           // Strip the basename to match useLocation()
           _extends4({}, location2, {
@@ -39035,7 +38998,7 @@ Please use another name.` : formatMuiErrorMessage(18));
         let disableScrollRestoration = router == null ? void 0 : router.enableScrollRestoration(savedScrollPositions, () => window.scrollY, getKeyWithoutBasename);
         return () => disableScrollRestoration && disableScrollRestoration();
       }, [router, basename, getKey]);
-      React52.useLayoutEffect(() => {
+      React51.useLayoutEffect(() => {
         if (restoreScrollPosition === false) {
           return;
         }
@@ -39061,7 +39024,7 @@ Please use another name.` : formatMuiErrorMessage(18));
     let {
       capture
     } = options || {};
-    React52.useEffect(() => {
+    React51.useEffect(() => {
       let opts = capture != null ? {
         capture
       } : void 0;
@@ -39072,17 +39035,124 @@ Please use another name.` : formatMuiErrorMessage(18));
     }, [callback, capture]);
   }
 
-  // src/pages/Home.jsx
+  // src/components/Navbar.jsx
+  function NavbarTab(props) {
+    const { text, target } = props;
+    return /* @__PURE__ */ import_react10.default.createElement(Link, { to: target, style: { textDecoration: "none" } }, /* @__PURE__ */ import_react10.default.createElement(Button_default, null, text));
+  }
+  function Navbar(props) {
+    const { tabs: tabs2 } = props;
+    const [anchorEl, setAnchorEl] = import_react10.default.useState(null);
+    const handleMenu = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+      setAnchorEl(null);
+    };
+    return /* @__PURE__ */ import_react10.default.createElement(AppBar_default, { position: "static" }, /* @__PURE__ */ import_react10.default.createElement(Toolbar_default, null, /* @__PURE__ */ import_react10.default.createElement(Stack_default, { direction: "row", sx: { flexGrow: 1 } }, tabs2.map(([tabText, tabTarget]) => /* @__PURE__ */ import_react10.default.createElement(NavbarTab, { key: tabText, text: tabText, target: tabTarget }))), /* @__PURE__ */ import_react10.default.createElement(Stack_default, { direction: "row" }, /* @__PURE__ */ import_react10.default.createElement(Link, { to: "/login" }, /* @__PURE__ */ import_react10.default.createElement(Button_default, null, "Sign In")), /* @__PURE__ */ import_react10.default.createElement(Box_default, null, /* @__PURE__ */ import_react10.default.createElement(IconButton_default, { onClick: handleMenu }, /* @__PURE__ */ import_react10.default.createElement(AccountCircleOutlined_default, null)), /* @__PURE__ */ import_react10.default.createElement(
+      Menu_default,
+      {
+        anchorEl,
+        anchorOrigin: {
+          vertical: "top",
+          horizontal: "right"
+        },
+        keepMounted: true,
+        transformOrigin: {
+          vertical: "top",
+          horizontal: "right"
+        },
+        open: Boolean(anchorEl),
+        onClose: handleClose
+      },
+      /* @__PURE__ */ import_react10.default.createElement(MenuItem_default, { onClick: handleClose }, "Profile"),
+      /* @__PURE__ */ import_react10.default.createElement(MenuItem_default, { onClick: handleClose }, "Logout")
+    )))));
+  }
+  NavbarTab.propTypes = {
+    text: import_prop_types38.default.string,
+    target: import_prop_types38.default.string
+  };
+  Navbar.propTypes = {
+    tabs: import_prop_types38.default.arrayOf(import_prop_types38.default.arrayOf(import_prop_types38.default.string))
+  };
+  var Navbar_default = Navbar;
+
+  // src/components/App.jsx
+  function App(props) {
+    const { tabs: tabs2, routes: routes2 } = props;
+    return /* @__PURE__ */ import_react11.default.createElement(Box_default, { sx: { flexGrow: 1 } }, /* @__PURE__ */ import_react11.default.createElement(Navbar_default, { tabs: tabs2 }), /* @__PURE__ */ import_react11.default.createElement(Routes, null, routes2.map((route) => /* @__PURE__ */ import_react11.default.createElement(
+      Route,
+      {
+        key: route.path,
+        path: route.path,
+        element: /* @__PURE__ */ import_react11.default.createElement(route.element, null),
+        index: route.index
+      }
+    ))));
+  }
+  App.propTypes = {
+    tabs: import_prop_types39.default.arrayOf(import_prop_types39.default.arrayOf(import_prop_types39.default.string)).isRequired,
+    routes: import_prop_types39.default.arrayOf(import_prop_types39.default.object).isRequired
+  };
+  var App_default = App;
+
+  // src/pages/HomePage.jsx
   function Home() {
     return "Home";
   }
-  var Home_default = Home;
+  var HomePage_default = Home;
 
-  // src/pages/About.jsx
-  function About() {
-    return "About Page";
+  // src/utils/route.js
+  var PageRoute = class {
+    /**
+     * @param {string} path
+     * @param {() => string} element
+     * @param {boolean} [index]
+     */
+    constructor(path, element, index = false) {
+      /** @type {string} */
+      __publicField(this, "path");
+      /** @type {() => string} */
+      __publicField(this, "element");
+      /** @type {boolean} */
+      __publicField(this, "index");
+      this.path = path;
+      this.element = element;
+      this.index = index;
+    }
+  };
+  var route_default = PageRoute;
+
+  // src/pages/AdoptPage.jsx
+  function Adopt() {
+    return "Adopt";
   }
-  var About_default = About;
+  var AdoptPage_default = Adopt;
+
+  // src/pages/AboutPage.jsx
+  function About() {
+    return "About";
+  }
+  var AboutPage_default = About;
+
+  // src/pages/FactsPage.jsx
+  function Facts() {
+    return "Facts";
+  }
+  var FactsPage_default = Facts;
+
+  // src/pages/LoginPage.jsx
+  function Login() {
+    return "Login";
+  }
+  var LoginPage_default = Login;
+
+  // src/pages/ProfilePage.jsx
+  function ProfilePage() {
+    return "Profile";
+  }
+  var ProfilePage_default = ProfilePage;
 
   // src/pages/NoPage.jsx
   function NoPage() {
@@ -39090,37 +39160,36 @@ Please use another name.` : formatMuiErrorMessage(18));
   }
   var NoPage_default = NoPage;
 
-  // src/pages/Adopt.jsx
-  function Adopt() {
-    return "Adopt Page";
-  }
-  var Adopt_default = Adopt;
-
-  // src/pages/Facts.jsx
-  function Facts() {
-    return "Facts Page";
-  }
-  var Facts_default = Facts;
-
-  // src/components/App.jsx
-  function App(props) {
-    const { pages } = props;
-    return /* @__PURE__ */ import_react11.default.createElement(Box_default, { sx: { flexGrow: 1 } }, /* @__PURE__ */ import_react11.default.createElement(Navbar_default, { pages }), /* @__PURE__ */ import_react11.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react11.default.createElement(Routes, null, /* @__PURE__ */ import_react11.default.createElement(Route, { index: true, element: /* @__PURE__ */ import_react11.default.createElement(Home_default, null) }), /* @__PURE__ */ import_react11.default.createElement(Route, { path: "adopt", element: /* @__PURE__ */ import_react11.default.createElement(Adopt_default, null) }), /* @__PURE__ */ import_react11.default.createElement(Route, { path: "facts", element: /* @__PURE__ */ import_react11.default.createElement(Facts_default, null) }), /* @__PURE__ */ import_react11.default.createElement(Route, { path: "about", element: /* @__PURE__ */ import_react11.default.createElement(About_default, null) }), /* @__PURE__ */ import_react11.default.createElement(Route, { path: "*", element: /* @__PURE__ */ import_react11.default.createElement(NoPage_default, null) }))));
-  }
-  App.propTypes = {
-    pages: import_prop_types39.default.arrayOf(import_prop_types39.default.string).isRequired
-  };
-  var App_default = App;
-
   // src/index.jsx
   var darkTheme = createTheme_default2({
     palette: {
       mode: "dark"
     }
   });
+  var tabs = [
+    ["Home", "/"],
+    ["Adopt", "/adopt"],
+    ["About", "/about"],
+    ["Facts", "/facts"]
+  ];
+  var routes = [
+    new route_default("/", HomePage_default, true),
+    new route_default("/adopt", AdoptPage_default),
+    new route_default("/about", AboutPage_default),
+    new route_default("/facts", FactsPage_default),
+    new route_default("/login", LoginPage_default),
+    new route_default("/profile", ProfilePage_default),
+    new route_default("*", NoPage_default)
+  ];
   var root = (0, import_client.createRoot)(document.getElementById("root"));
   root.render(
-    /* @__PURE__ */ import_react12.default.createElement(ThemeProvider4, { theme: darkTheme }, /* @__PURE__ */ import_react12.default.createElement(CssBaseline_default, null), /* @__PURE__ */ import_react12.default.createElement(App_default, { pages: ["Home", "Adopt", "About", "Facts"] }))
+    /* @__PURE__ */ import_react12.default.createElement(ThemeProvider4, { theme: darkTheme }, /* @__PURE__ */ import_react12.default.createElement(CssBaseline_default, null), /* @__PURE__ */ import_react12.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react12.default.createElement(
+      App_default,
+      {
+        tabs,
+        routes
+      }
+    )))
   );
 })();
 /*! Bundled license information:

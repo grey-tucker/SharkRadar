@@ -1,5 +1,5 @@
 function Facts() {
-	return "Facts Page";
+	return "Facts";
 }
 
 export default Facts;

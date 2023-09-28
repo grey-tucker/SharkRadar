@@ -6,19 +6,22 @@ import React from "react";
 import PropTypes from "prop-types";
 import { IconButton, Menu, MenuItem, Stack } from "@mui/material";
 import { AccountCircleOutlined } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 function NavbarTab(props) {
-	const { text } = props;
+	const { text, target } = props;
 
 	return (
-		<Button>
-			{text}
-		</Button>
+		<Link to={target} style={{ textDecoration: "none" }}>
+			<Button>
+				{text}
+			</Button>
+		</Link>
 	);
 }
 
 function Navbar(props) {
-	const { pages } = props;
+	const { tabs } = props;
 
 	const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -35,15 +38,17 @@ function Navbar(props) {
 			<Toolbar>
 				<Stack direction="row" sx={{ flexGrow: 1 }}>
 					{
-						pages.map((tab) => (
-							<NavbarTab key={tab} text={tab} />
+						tabs.map(([tabText, tabTarget]) => (
+							<NavbarTab key={tabText} text={tabText} target={tabTarget} />
 						))
 					}
 				</Stack>
 				<Stack direction="row">
-					<Button>
-						{"Sign In"}
-					</Button>
+					<Link to="/login">
+						<Button>
+							{"Sign In"}
+						</Button>
+					</Link>
 					<Box>
 						<IconButton onClick={handleMenu}>
 							<AccountCircleOutlined />
@@ -51,12 +56,12 @@ function Navbar(props) {
 						<Menu
 							anchorEl={anchorEl}
 							anchorOrigin={{
-								vertical: "bottom",
+								vertical: "top",
 								horizontal: "right",
 							}}
 							keepMounted
 							transformOrigin={{
-								vertical: "bottom",
+								vertical: "top",
 								horizontal: "right",
 							}}
 							open={Boolean(anchorEl)}
@@ -73,11 +78,12 @@ function Navbar(props) {
 }
 
 NavbarTab.propTypes = {
-	text: PropTypes.string
+	text: PropTypes.string,
+	target: PropTypes.string,
 };
 
 Navbar.propTypes = {
-	pages: PropTypes.arrayOf(PropTypes.string).isRequired
+	tabs: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
 };
 
 export default Navbar;

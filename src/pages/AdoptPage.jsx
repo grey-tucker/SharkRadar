@@ -1,5 +1,5 @@
 function Adopt() {
-	return "Adopt Page";
+	return "Adopt";
 }
 
 export default Adopt;
