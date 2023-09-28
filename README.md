@@ -28,32 +28,27 @@
     *(or `server:watch` to watch for changes)*
 6. Go to: http://localhost:3030
 
-### Setting up the node project
+### Packages used
 
-*(This is only necessary if you want to create a new node project)*
+- **esbuild**: Bundles and minifies the JavaScript code
+- **React**: JavaScript frontend library
+- **Material UI**: UI component library
+- **MongoDB**: Database
+- **dotenv**: Environment variables
+- **Express**: Web server
+- **ESLint**: Helps find and fix problems in JavaScript code
 
-1. Create the node project:
-    ```bash
-    npm init
-    ```
-2. Install the following node packages:
-    ```bash
-    npm init @eslint/config
-    ```
-    ```bash
-    npm i @mui/icons-material @mui/material @emotion/styled @emotion/react mongodb
-    ```
-    ```bash
-    npm i -D esbuild eslint-plugin-react-hooks express dotenv react react-dom react-router-dom
-    ```
-    **Purpose of packages:**
-    - **esbuild**: Bundles and minifies the JavaScript code
-    - **React**: JavaScript frontend library
-    - **Material UI**: UI component library
-    - **MongoDB**: Database
-    - **dotenv**: Environment variables
-    - **Express**: Web server
-    - **ESLint**: Helps find and fix problems in JavaScript code
+*(Do not run the scripts below if you have cloned the repo and ran `npm i`)*
+
+```bash
+npm init @eslint/config
+```
+```bash
+npm i @mui/icons-material @mui/material @emotion/styled @emotion/react mongodb
+```
+```bash
+npm i -D esbuild eslint-plugin-react-hooks express dotenv react react-dom react-router-dom
+```
 
 ### Structure
 
