@@ -6,3 +6,107 @@
     height: 500px;
     width: 100%;
 }
+#content {
+
+    color: black;
+}
+
+/*
+ * Property styles in unhighlighted state for shark pins
+ */
+ .property {
+    align-items: center;
+    background-color: #ff0000;
+    border-radius: 50%;
+    color: #263238;
+    display: flex;
+    font-size: 14px;
+    gap: 15px;
+    height: 30px;
+    justify-content: center;
+    padding: 4px;
+    position: relative;
+    position: relative;
+    transition: all 0.3s ease-out;
+    width: 30px;
+  }
+  
+  .property::after {
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 9px solid #FFFFFF;
+    content: "";
+    height: 0;
+    left: 50%;
+    position: absolute;
+    top: 95%;
+    transform: translate(-50%, 0);
+    transition: all 0.3s ease-out;
+    width: 0;
+    z-index: 1;
+  }
+ /* potential icon code
+ */
+  /*
+  .property .icon {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: #FFFFFF;
+  }
+  
+  .property .icon svg {
+    height: 20px;
+    width: auto;
+  }
+  */
+  .property .details {
+    display: none;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .property .name {
+    color: #9E9E9E;
+    font-size: 10px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }
+  
+  .property .features {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  
+  .property .features > div {
+    align-items: center;
+    background: #F5F5F5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: flex;
+    font-size: 10px;
+    gap: 5px;
+    padding: 5px;
+  }
+  
+  /*
+   * Property styles in highlighted state for pins
+   */
+  .property.highlight {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+    height: 80px;
+    padding: 8px 15px;
+    width: auto;
+  }
+  
+  .property.highlight::after {
+    border-top: 9px solid #FFFFFF;
+  }
+  
+  .property.highlight .details {
+    display: flex;
+  }

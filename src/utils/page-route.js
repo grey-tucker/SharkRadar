@@ -1,21 +1,25 @@
-class PageRoute {
+class PageRouteObject {
 	/** @type {string} */
 	path;
-	/** @type {() => string} */
+	/** @type {string} */
+	name;
+	/** @type {() => import("react").ReactElement} */
 	element;
 	/** @type {boolean} */
 	index;
 
 	/**
 	 * @param {string} path
-	 * @param {() => string} element
+	 * @param {string} name
+	 * @param {() => import("react").ReactElement} element
 	 * @param {boolean} [index]
 	 */
-	constructor(path, element, index = false) {
+	constructor(path, name, element, index = false) {
 		this.path = path;
+		this.name = name;
 		this.element = element;
 		this.index = index;
 	}
 }
 
-export default PageRoute;
+export default PageRouteObject;

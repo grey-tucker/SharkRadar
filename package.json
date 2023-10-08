@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Shark Radar",
   "main": "index.js",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "build": "esbuild src/index.jsx --bundle --target=es6 --outfile=public/scripts.js",
     "build:watch": "esbuild src/index.jsx --bundle --target=es6 --outfile=public/scripts.js --watch",

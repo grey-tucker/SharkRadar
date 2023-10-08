@@ -1,22 +1,20 @@
-import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
+import express from "express";
+import FactsRouter from "./routes/facts-route.js";
+import SharksRouter from "./routes/sharks-route.js";
 import { port } from "./utils/load-env.js";
-import db from "./utils/connect-db.js";
-
-try {
-	db.command({ ping: 1 });
-} catch (err) {
-	console.error(err);
-}
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-
+app.use(express.json());
 app.use(express.static("./public"));
 
+// Routes
+app.use("/data", SharksRouter);
+app.use("/data", FactsRouter);
 // Status 200
 app.get([
 	"/",
