@@ -15,7 +15,7 @@ class DataHandler {
 	}
 
     /**
-	 * @returns {Promise<import("src/utils/objects/shark.js")[]>}
+	 * /@returns {Promise<import("src/utils/objects/shark.js")[]>}
 	 */
 	static async getSharks() {
 		return await this.getData("sharks");

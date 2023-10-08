@@ -7,7 +7,7 @@ class SharkObject {
 	originLat;
     /** @type {number} */
 	originLon;
-	/** @type {import("src/utils/objects/shark-type.js").default | null} */
+	///** @type {import("src/utils/objects/shark-type.js").default | null} */
 	sharkType;
 
 	/**
@@ -15,7 +15,7 @@ class SharkObject {
 	 * @param {number} age
 	 * @param {number} originLat
      * @param {number} originLon
-	 * @param {import("src/utils/objects/shark-type.js").default | null} sharkType
+	 /* //@param {import("src/utils/objects/shark-type.js").default | null} sharkType
 	 */
 	constructor(sharkID, age, originLat, originLon, sharkType = null) {
 		this.sharkID = sharkID;
